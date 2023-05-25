@@ -4,16 +4,13 @@
 
 // int NaturalDegree (int numA, int numB)
 // {
-//     int numA = num1;
-//     int numB = num2;
-//     int res = numA;
-//     for(int i = 1; i < numB; i++)
+//     int res = 1;
+//     for(int i = 1; i <= numB; i++)
 //     {
 //         res *= numA;
 //     }
 //     return res;
 // }
-
 
 // Console.WriteLine("Input number A");
 // int num1 = Convert.ToInt32(Console.ReadLine());
@@ -27,24 +24,54 @@
 // 82 -> 10
 // 9012 -> 12
 
-int SumOfDigits (int Num)
-{
-    int sum = 0;
-    int dig = 0;
-    while(Num > 0)
-    {
-        dig = Num / 10;
-        sum = sum + dig;
-    }
-    return sum;
-}
-
-Console.WriteLine("Input your number");
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Sum of digits in {num} -> {SumOfDigits(num)}");
+// int SumOfDigits (int Num)
+// {
+//     int sum = 0;
+//     while(Num > 0)
+//     {
+//         sum += Num % 10;
+//         Num /= 10;
+//     }
+//     return sum;
+// }
+            
+// Console.WriteLine("Input your number");
+// int num = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine($"Sum of digits in {num} -> {SumOfDigits(num)}");
 
 
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
+
+// int[] CreateNewArray(int size, int min, int max)
+// {
+//     int[] newArray = new int[size];
+//     for(int i = 0; i < size; i++)
+//     {
+//         newArray [i]= new Random().Next(min, max++);
+//     }
+//     return newArray;
+// }
+
+// void PrintArray(int[] newArray)
+// {
+//     for(int i = 0; i < newArray.Length; i++)
+//     {
+//         Console.Write(newArray[i] + ", ");
+//     }
+//     Console.WriteLine();
+// }
+
+// Console.WriteLine("Input the size of array");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input the minimum value of element");
+// int min= Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input the maximum value of element");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[] myArray = CreateNewArray(size, min, max);
+
+// PrintArray(myArray);
+
