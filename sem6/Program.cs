@@ -24,7 +24,7 @@
 // {
 //     int[] array = new int[size];
 //     array [0] = firstNum;
-//     array [1] = secondNum;
+//     array [1] = secondNum; m,n
 //     for (int i = 2; i < size; i++)
 //     {
 //         array[i] = array[i-1] + array[i-2];
@@ -54,24 +54,35 @@
 // Задача (зал). Напишите программу, которая перевернёт одномерный массив (последний элемент будет на первом месте, 
 //а первый - на последнем и т.д.)
 
-// int[] ReverseArray(int[] array)
-// {
-//     int tmp;
-//     for (int i = 0; i < arr)
-// }
+int[] ReverseArray(int[] array)
+{
+    int tmp;
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        tmp = array[i];
+        array[i] = array[array.Length - i - 1];
+        array[array.Length - i - 1] = tmp;
+    }
+    return array;
+}
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return newArray;
+} 
 
-
-
-
-
-// void PrintArray(int[] array)
-// {
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         Console.Write(array[i] + " ");
-//     }
-//     Console.WriteLine();
-// }
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
 
 // int[] WishRotate(int[] wishRotate, int size)
 // {
@@ -86,24 +97,15 @@
 //     return wishRotate;
 // }
 
-// int[] CreateRandomArray(int size, int minValue, int maxValue)
-// {
-//     int[] newArray = new int[size];
-//     for (int i = 0; i < size; i++)
-//     {
-//         newArray[i] = new Random().Next(minValue, maxValue + 1);
-//     }
-//     return newArray;
-// }
 
-// Console.WriteLine($"input size");
-// int size = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine($"input minValue");
-// int minValue = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine($"input maxValue");
-// int maxValue = Convert.ToInt32(Console.ReadLine());
-// int[] array = CreateRandomArray(size, minValue, maxValue);
+Console.WriteLine($"input size");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"input minValue");
+int minValue = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"input maxValue");
+int maxValue = Convert.ToInt32(Console.ReadLine());
 
-// PrintArray(array);
-// array = WishRotate(array, size);
-// PrintArray(array);
+int[] myArray = CreateRandomArray(size, minValue, maxValue);
+PrintArray(myArray);
+int[] RotateArray = ReverseArray(myArray);
+PrintArray(RotateArray);
